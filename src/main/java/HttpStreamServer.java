@@ -82,6 +82,7 @@ public class HttpStreamServer implements Runnable {
         socket.close();
         serverSocket.close();
     }
+    
     public static BufferedImage Mat2bufferedImage(Mat image) throws IOException {
         MatOfByte bytemat = new MatOfByte();
         Imgcodecs.imencode(".jpg", image, bytemat);

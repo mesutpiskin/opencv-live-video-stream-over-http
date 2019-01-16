@@ -1,19 +1,31 @@
+English | [Türkçe](./README.tr-TR.md)
 
-![OpenCV](https://img.shields.io/badge/OpenCV-3.1-Green.svg)
-![jAVA](https://img.shields.io/badge/Java-8-Green.svg)
+<div align="center">
 
-HTTP Live Video Stream From OpenCV
-===================
-**en:** OpenCV is a sample project that is read from the video source (Camera, File System, NVR, DVR etc.) and displays the processed image via the http protocol. OpenCV version 3.1 is used. You can see the architecture of the project below.
+<img width="100" src="./static/logo.png"/>
 
-**tr:** OpenCV ile video kaynağından (Kamera, Dosya Sistemi, NVR, DVR vb.) okunan ve işlenen görütüyü, http protokolü üzerinden yayınlayan örnek bir projedir. OpenCV 3.1 sürümü kullanılmıştır. Projenin mimarisini aşağıda görebilirsiniz.
+<h1 align="center">HTTP Live Video Stream From OpenCV</h1>
+
+</div>
 
 
-### architecture
+OpenCV is a sample project that is read from the video source (Camera, File System, NVR, DVR etc.) and displays the processed image via the http protocol. OpenCV version 3.1 is used. You can see the architecture of the project below.
 
-![](http://mesutpiskin.com/blog/wp-content/uploads/2017/11/HTTP-live-stream-from-OpenCV.png)
 
-### running
+### Architecture
+
+<div align="center">
+<img width="500" src="./static/mimari.png"/>
+</div>
+
+
+### Dependency
+
+ - OpenCV 3+
+ - Java 6+
+
+
+### How to run
 
 If you use as follows
 ```sh
@@ -25,11 +37,10 @@ set JVM parameter
 ```
 or just use it
 ```sh
+#for mac or linux
 System.loadLibrary("/yourpath/opencv-3.4.0/build/lib");
+
 #for windows
 System.loadLibrary("/yourpath/opencv_java3xx");
 ```
-### dependency
 
- - OpenCV 3.x or higher [Download OpenCV](https://opencv.org/releases.html)
- - Java 6 or higher
