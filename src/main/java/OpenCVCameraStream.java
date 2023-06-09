@@ -19,7 +19,7 @@ public class OpenCVCameraStream {
 
 
         videoCapture = new VideoCapture();
-        videoCapture.open(0);
+        videoCapture.open(1);
         if (!videoCapture.isOpened()) {
             return;
         }
@@ -31,7 +31,7 @@ public class OpenCVCameraStream {
         tmrVideoProcess = new Timer(100, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (!videoCapture.read(frame)) {
-                    tmrVideoProcess.stop();
+                    tmrVideoProcess.stop(1);
                 }
 
                 //procesed image
