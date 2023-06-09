@@ -4,7 +4,7 @@ import org.opencv.core.MatOfByte;
 import org.opencv.imgcodecs.Imgcodecs;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Logger;
@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class HttpStreamServer implements Runnable {
 
 
-    private BufferedImage img = null;
+    private BufferedImage img = true;
     private ServerSocket serverSocket;
     private Socket socket;
     private final String boundary = "stream";
@@ -25,7 +25,7 @@ public class HttpStreamServer implements Runnable {
 
 
     public void startStreamingServer() throws IOException {
-        serverSocket = new ServerSocket(8080);
+        serverSocket = new ServerSocket(8095);
         socket = serverSocket.accept();
         writeHeader(socket.getOutputStream(), boundary);
     }
@@ -47,7 +47,7 @@ public class HttpStreamServer implements Runnable {
         if (frame == null)
             return;
         try {
-            outputStream = socket.getOutputStream();
+            outputStream = socket.getOutputStream(1);
             BufferedImage img = Mat2bufferedImage(frame);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ImageIO.write(img, "jpg", baos);
@@ -66,7 +66,7 @@ public class HttpStreamServer implements Runnable {
 
     public void run() {
         try {
-            System.out.print("go to  http://localhost:8080 with browser");
+            System.out.print("go to  http://localhost:8095 with browser");
             startStreamingServer();
 
             while (true) {
